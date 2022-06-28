@@ -14,7 +14,7 @@ def set_correct_normal(possible_internal_points,plane): #Make the orientation of
 				return         
 
 def printV(vec): # Print points
-	print vec.x, vec.y, vec.z
+	print (vec.x, vec.y, vec.z)
 
 def cross(pointA, pointB): # Cross product
 	x = (pointA.y*pointB.z) - (pointA.z*pointB.y)
@@ -282,7 +282,7 @@ def initial(): # To calculate the extreme points to make the initial simplex
 points = [] # List to store the points
 
 if len(sys.argv) < 2:
-	print "Few arguments. See README for help"
+	print ("Few arguments. See README for help")
 	sys.exit()
 
 try: # Open the input and store it in points list
@@ -293,7 +293,7 @@ try: # Open the input and store it in points list
 		points.append(Point(a[0], a[1], a[2]))
 
 	if num < 4:
-		print "Less than 4 points so 1D or 2D"
+		print ("Less than 4 points so 1D or 2D")
 		sys.exit()
 
 finally:
@@ -307,7 +307,7 @@ try:
 
 	fourth_point = max_dist_plane_point(first_plane) # Make the fourth plane to make a tetrahedron
 except:
-	print "Figure either in 2D or 3D"
+	print("Figure either in 2D or 3D")
 	sys.exit()
 
 possible_internal_points = [initial_line[0],initial_line[1],third_point,fourth_point] # List that helps in calculating orientation of point
